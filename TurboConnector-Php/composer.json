@@ -1,6 +1,6 @@
 {
 	"name" : "turboconnector/turboconnector-php",
-	"description" : "General purpose library to facilitate connection to remote locations and external APIS",
+	"description" : "General purpose library to facilitate connection to 3rd party services, remote locations and external APIS",
 	"type" : "library",
 	"license" : "Apache-2.0",
 	"minimum-stability" : "stable",
