@@ -4,7 +4,7 @@
 
 	"metadata": {
 		"name": "turboconnector-php",
-		"description": "General purpose library to facilitate connection to remote locations and external APIS",
+		"description": "General purpose library to facilitate connection to 3rd party services, remote locations and external APIS",
 		"builderVersion": "8.0.0"		
 	},
     "containers": {
