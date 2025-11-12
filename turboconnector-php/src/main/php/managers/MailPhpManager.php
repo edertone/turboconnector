@@ -1,7 +1,7 @@
 <?php
 
 /**
- * TurboConnector is a general purpose library to facilitate connection to remote locations and external APIS.
+ * General purpose library to facilitate connection to 3rd party services, remote locations and external APIS.
  *
  * Website : -> https://turboframework.org/en/libs/turboconnector
  * License : -> Licensed under the Apache License, Version 2.0. You may not use this file except in compliance with the License.

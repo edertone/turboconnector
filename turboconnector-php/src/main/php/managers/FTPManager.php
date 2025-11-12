@@ -1,7 +1,7 @@
 <?php
 
 /**
- * TurboConnector is a general purpose library to facilitate connection to remote locations and external APIS.
+ * General purpose library to facilitate connection to 3rd party services, remote locations and external APIS.
  *
  * Website : -> https://turboframework.org/en/libs/turboconnector
  * License : -> Licensed under the Apache License, Version 2.0. You may not use this file except in compliance with the License.
@@ -45,10 +45,11 @@ class FTPManager extends BaseStrictClass {
      * @param string $host The FTP server address. This parameter shouldn't have any trailing slashes and shouldn't be prefixed with ftp://.
      * @param int $port This parameter specifies an alternate port to connect to. If it is omitted or set to zero, then the default FTP port, 21, will be used.
      * @param int $timeout This parameter specifies the timeout for all subsequent network operations. If omitted, the default value is 90 seconds. The timeout can be changed and queried at any time
+     * @param bool $passive If set to true, the passive mode will be enabled on the ftp connection. Passive mode is often necessary when the client is behind a firewall and cannot accept incoming TCP connections.
      *
      * @throws UnexpectedValueException If connection cannot be established
      */
-    public function __construct($userName, $psw, $host, $port = null, $timeout = 90){
+    public function __construct($userName, $psw, $host, $port = null, $timeout = 90, $passive = true){
 
         // Initialize and store the ftp connection
         $this->_connectionId = ftp_connect($host, $port, $timeout);
@@ -65,6 +66,8 @@ class FTPManager extends BaseStrictClass {
 
             throw new UnexpectedValueException('Ftp login error: Verify user credentials');
         }
+
+        ftp_pasv($this->_connectionId, $passive);
     }
 
 
